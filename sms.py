@@ -115,7 +115,6 @@ def initialSetup():
 
 
 def send(message):
-    # Replace the number with your own, or consider using an argument\dict for multiple people.
     to_number = phoneNumber + carriers[carrier]
     print(to_number)
     auth = (email, passwd)
@@ -129,7 +128,6 @@ def send(message):
     server.sendmail(auth[0], to_number, message)
 
 def renderwait(jobID, jobNum):
-    #print(str(int(project.GetRenderJobStatus(jobID)['CompletionPercentage'])) + "is the render completion")
     while int(project.GetRenderJobStatus(jobID)['CompletionPercentage']) < 100:
         time.sleep(2)
         print(str(int(project.GetRenderJobStatus(jobID)['CompletionPercentage'])) + "is the render completion")
